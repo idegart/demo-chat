@@ -20,10 +20,10 @@ class LoginUser
 
         if ($user && Hash::check($data->password(), $user->getAuthPassword())) {
             Auth::login($user);
-            return redirect()->to(route('users'));
+            return redirect()->route('users');
         }
 
-        return redirect()->to(route('login'))->withErrors([
+        return redirect()->route('login')->withErrors([
             'password' => __('auth.failed')
         ]);
     }

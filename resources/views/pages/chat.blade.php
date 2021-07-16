@@ -25,7 +25,7 @@
             <form method="post" action="{{ route('send-message', $chat) }}">
                 @csrf
                 <div class="form-floating mb-3">
-                    <input name="text" type="text" class="form-control {{ $errors->has('text') ? 'is-invalid' : '' }}" id="text" placeholder="Введите текст">
+                    <input name="text" type="text" class="form-control {{ $errors->has('text') ? 'is-invalid' : '' }}" id="text" placeholder="Введите текст" autofocus>
                     <label for="text">Текст</label>
                     @if($errors->has('text'))
                         @foreach($errors->get('text') as $error)
