@@ -4,6 +4,11 @@
 
     <main class="container">
 
+        <form action="{{ route('logout') }}" method="post">
+            @csrf
+            <button class="btn btn-outline-primary mb-3 mt-3">Выйти</button>
+        </form>
+
         <table class="table">
             <thead>
             <tr>
