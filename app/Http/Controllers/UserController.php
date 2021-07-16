@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actions\Chat\InitiateChat;
+use App\Http\Requests\User\IndexRequest;
 use App\Http\Requests\User\InitiateChatRequest;
 use App\Models\User;
 use Auth;
@@ -10,7 +11,7 @@ use Illuminate\Http\RedirectResponse;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(IndexRequest $request)
     {
         /** @var User $user */
         $user = Auth::user();

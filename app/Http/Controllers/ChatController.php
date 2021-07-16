@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actions\Chat\SendMessage;
+use App\Http\Requests\Chat\ChatRequest;
 use App\Http\Requests\Chat\SendMessageRequest;
 use App\Models\Chat;
 use Illuminate\Http\JsonResponse;
@@ -10,7 +11,7 @@ use Illuminate\Http\RedirectResponse;
 
 class ChatController extends Controller
 {
-    public function chat(Chat $chat)
+    public function chat(ChatRequest $request, Chat $chat)
     {
         $chat->load('messages.user');
 
